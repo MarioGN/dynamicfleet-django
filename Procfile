@@ -1,0 +1,1 @@
+web: gunicorn dynamicfleet.wsgi --log-file -
