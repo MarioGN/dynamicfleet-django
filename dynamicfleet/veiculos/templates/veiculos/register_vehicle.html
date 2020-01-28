@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    
+<div class="container">
+
+    {% if messages %}
+        {% for message in messages %}
+            <p class="info-text">{{ message }}</p>
+        {% endfor %}
+    {% endif %}
+
+    <div id="form-container">
+        <div class="form-header">
+            <h3>Registrar Novo Veículo</h3>
+        </div>
+
+        
+
+        <form id="vehicle-form" action="." novalidate method="POST">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+
+            <div class="form-group {% if form.model.errors %} invalid {% endif %}">
+                <label for="{{ form.model.id_for_label }}">{{ form.model.label }} <small>*</small></label>
+                {{ form.model }}
+                <span>
+                    {{ form.model.errors }}
+                </span>
+            </div>
+
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="{% if form.license_plate.errors %} invalid {% endif %}">
+                        <label for="{{ form.license_plate.id_for_label }}">{{ form.license_plate.label }} <small>*</small></label>
+                        {{ form.license_plate }}
+                        <span>
+                            {{ form.license_plate.errors }}
+                        </span>
+                    </div>
+                    <div id="ano-container" class="{% if form.year.errors %} invalid {% endif %}">
+                        <label for="{{ form.year.id_for_label }}">{{ form.year.label }} <small>*</small></label>
+                        {{ form.year }}
+                        <span>
+                            {{ form.year.errors }}
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group {% if form.state.errors %} invalid {% endif %}">
+                <label for="{{ form.state.id_for_label }}">{{ form.state.label }} <small>*</small></label>
+                {{ form.state }}
+                <span>
+                    {{ form.state.errors }}
+                </span>
+            </div>
+
+            <div class="btn-group">
+                <button class="btn btn-cancelar" type="button">Cancelar</button>
+                <button class="btn btn-confirmar" type="submit">Cadastrar</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock content %}

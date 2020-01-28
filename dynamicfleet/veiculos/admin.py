@@ -1,3 +1,4 @@
 from django.contrib import admin
+from dynamicfleet.veiculos.models import Vehicle
 
-# Register your models here.
+admin.site.register(Vehicle)

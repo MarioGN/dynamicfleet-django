@@ -14,10 +14,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-import dynamicfleet.veiculos.views
+from django.urls import path, include
 
 urlpatterns = [
-    path('', dynamicfleet.veiculos.views.home),
+    path('veiculos/', include('dynamicfleet.veiculos.urls')),
     path('admin/', admin.site.urls),
 ]
