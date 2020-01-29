@@ -1,3 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponse
 
-# Create your views here.
+
+def reserve_vehicle(request):
+    return render(request, 'reservas/reserve_vehicle.html')
