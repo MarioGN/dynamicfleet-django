@@ -7,29 +7,34 @@
             <h3>Veículos Disponiveis</h3>
         </div>
 
-        <div id="table-container">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Veículo</th>
-                        <th>Placa</th>
-                        <th>Ano</th>
-                        <th>Estado</th>
-                        <th>Ações</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Gol</td>
-                        <td>ABC1234</td>
-                        <td>2012</td>
-                        <td>Disponível</td>
-                        <td><a href="#" class="btn-action">Reservar</a></td>
-                    </tr>
-                    
-                </tbody>
-            </table>
-        </div>
+        {% if vehicles %}
+            <div id="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Veículo</th>
+                            <th>Placa</th>
+                            <th>Ano</th>
+                            <th>Estado</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for vehicle in vehicles %}
+                            <tr>
+                                <td>{{ vehicle.model }}</td>
+                                <td>{{ vehicle.license_plate }}</td>
+                                <td>{{ vehicle.year }}</td>
+                                <td>{{ vehicle.state }}</td>
+                                <td><a href="#" class="btn-action">Reservar</a></td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% else %}
+            <p id="alert-empty-list">Ainda não existem veículos registrados no sistema!</p>
+        {% endif %}
     </div>
 </div>
 {% endblock content %}

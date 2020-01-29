@@ -1,6 +1,7 @@
 from django.shortcuts import render, HttpResponse
 from django.contrib import messages
 from dynamicfleet.veiculos.forms import VehicleForm
+from dynamicfleet.veiculos.models import Vehicle
 
 
 def register_vehicle(request):
@@ -19,5 +20,6 @@ def register_vehicle(request):
 
 
 def vehicles_list(request):
-    return render(request, 'veiculos/vehicles_list.html')
+    vehicles = Vehicle.objects.all()
+    return render(request, 'veiculos/vehicles_list.html', { 'vehicles' : vehicles})
     

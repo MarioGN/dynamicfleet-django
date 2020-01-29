@@ -282,3 +282,10 @@ a {
 #table-container .btn-action:hover {
     background-color: rgb(27, 141, 175);
 }
+
+#alert-empty-list {
+    color: var(--navbar-secondary-color); 
+    margin: 30px 20px; 
+    text-align: center;
+    font-size: 1.6em;
+}
