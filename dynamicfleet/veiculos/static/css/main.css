@@ -289,3 +289,105 @@ a {
     text-align: center;
     font-size: 1.6em;
 }
+
+/* Reservas */
+#reserva-container {
+    width: 100%;
+    margin: 20px auto;
+    background: var(--font-color-light);
+    box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.02);
+    border-radius: 2px;
+    min-height: 80vh;
+    padding: 20px 10px;
+}
+
+#reserva-container .list-header  {
+    background-color: var(--navbar-primary-color);
+    padding: 5px;
+    text-align: center;
+    color: var(--font-color-light);
+}
+
+#form-reserva-container {
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    margin: 20px 0;
+    padding: 10px;
+    padding-top: 0;
+}
+
+#form-reserva-container h3 {
+    text-align: center;
+    font-size: 1.4em;
+    margin: 5px 0;
+}
+
+#form-reserva {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid #ddd;
+}
+
+#form-reserva .form-group input {
+    padding: 8px;
+    border: 1px #ddd solid;
+}
+
+#form-reserva .form-group input:focus {
+    outline: none;
+    border-color: var(--navbar-primary-color);
+}
+
+#form-reserva .form-group select {
+    max-width: 250px;
+    padding: 8px;
+}
+
+#form-reserva label, input, select, button {
+    margin: 20px 10px;
+}
+
+#form-reserva label {
+    margin-right: 0;
+}
+
+.btn-reserva {
+    display: inline-block;
+    color: #fff;
+    font-size: 1.1em;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    background-color: var(--btn-confirm-background);
+}
+
+.btn-reserva:hover { 
+    background-color: var(--btn-confirm-background-hover);
+}
+
+#table-veiculo-container {
+    margin: 20px 0;
+    border: 1px solid var(--navbar-secondary-color);
+}
+
+#reserva-container table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#reserva-container table, th, td {
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+#reserva-container th {
+    background-color: var(--navbar-primary-color);
+    color: var(--font-color-light);
+}
+
+#reserva-container th, td {
+    padding: 4px;
+    text-align: center;
+} 

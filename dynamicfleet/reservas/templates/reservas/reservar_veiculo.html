@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div id="reserva-container">
+        <div class="list-header">
+            <h3>Reservar Veículo</h3>
+        </div>
+
+        <div id="table-veiculo-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Modelo</th>
+                        <th>Placa</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Gol</td>
+                        <td>ABC1234</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="form-reserva-container">
+            <h3>Reserva</h3>
+            <form id="form-reserva" action="">
+                <div class="form-group">
+                    <label for="inicio">Inicio:</label>
+                    <input type="datetime-local" id="inicio"
+                        name="inicio" value="2018-06-12T19:30"
+                        min="2018-06-07T00:00" max="2018-06-14T00:00">
+                </div>
+                <div class="form-group">
+                    <label for="inicio">Fim:</label>
+                    <input type="datetime-local" id="inicio"
+                        name="inicio" value="2018-06-12T19:30"
+                        min="2018-06-07T00:00" max="2018-06-14T00:00">
+                </div>
+                <div class="form-group">
+                    <label for="estado">Estado da Reserva:</label>
+                    <select name="estado" id="estado">
+                        <option value="">Provisória</option>
+                        <option value="">Confirmada</option>
+                        <option value="">Cancelada</option>
+                    </select>
+                </div>
+                <button class="btn-reserva">Confirmar</button>
+            </form>
+        </div>
+       
+    </div>
+</div>
+{% endblock content %}
