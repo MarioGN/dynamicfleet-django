@@ -30,6 +30,7 @@ INSTALLED_APPS = [
 
     # Project APPs
     'dynamicfleet.veiculos',
+    'dynamicfleet.reservas',
 ]
 
 MIDDLEWARE = [
