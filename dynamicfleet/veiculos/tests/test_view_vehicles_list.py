@@ -4,7 +4,7 @@ from django.db.models import QuerySet
 from dynamicfleet.veiculos.models import Vehicle
 
 
-class VehiclesListeGet(TestCase):
+class VehiclesListGet(TestCase):
     def setUp(self):
         self.response = self.client.get(r('veiculos:vehicles_list'))
     
@@ -19,7 +19,7 @@ class VehiclesListeGet(TestCase):
         self.assertIsInstance(vehicles, QuerySet)
 
 
-class VehiclesListeGetEmpty(TestCase):
+class VehiclesListGetEmpty(TestCase):
     def setUp(self):
         self.response = self.client.get(r('veiculos:vehicles_list'))
 
@@ -32,7 +32,7 @@ class VehiclesListeGetEmpty(TestCase):
         self.assertContains(self.response, message)
 
 
-class VehiclesListeGetHasItems(TestCase):
+class VehiclesListGetHasItems(TestCase):
     def setUp(self):
         self.obj = Vehicle(
             model='Gol',
