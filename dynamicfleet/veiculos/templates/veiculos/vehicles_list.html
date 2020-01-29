@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div id="list-container">
+        <div class="list-header">
+            <h3>Veículos Disponiveis</h3>
+        </div>
+
+        <div id="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Veículo</th>
+                        <th>Placa</th>
+                        <th>Ano</th>
+                        <th>Estado</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Gol</td>
+                        <td>ABC1234</td>
+                        <td>2012</td>
+                        <td>Disponível</td>
+                        <td><a href="#" class="btn-action">Reservar</a></td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock content %}

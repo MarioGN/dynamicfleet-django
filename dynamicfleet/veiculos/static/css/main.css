@@ -6,6 +6,7 @@
     --font-color-light: #fff;
 
     --navbar-primary-color: #f7c08a;
+    --navbar-primary-color-hover: #f59f48d8;
     --navbar-secondary-color: #333;
     --navbar-secondary-color-hover: #444;
 
@@ -128,11 +129,7 @@ a {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
-}
-
-#vehicle-form label small {
-    color: var(--btn-cancel-background);
-}
+}   
 
 #vehicle-form input {
     width: 100%;
@@ -175,10 +172,6 @@ a {
     color: #E75B65;
     font-size: .9em;
     display: block;
-}
-
-#vehicle-form .invalid span ul {
-    list-style: none;
 }
 
 #ano-container label,
@@ -225,6 +218,7 @@ a {
 }
 
 .info-text {
+    display: none;
     font-size: 1.1em;
     background-color: #187FF5;
     width: 600px;
@@ -233,4 +227,58 @@ a {
     color: var(--font-color-light);
     padding: 10px;
     border-radius: 5px;
+}
+
+/* Lista de Veículos */
+#list-container {
+    width: 100%;
+    margin: 20px auto;
+    background: var(--font-color-light);
+    box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.02);
+    border-radius: 2px;
+    min-height: 80vh;
+    padding: 20px 10px;
+}
+
+#list-container .list-header {
+    background-color: var(--navbar-primary-color);
+    padding: 5px;
+    text-align: center;
+}
+
+#list-container h3 {
+    font-size: 1.4em;
+    color: var(--font-color-light);
+}
+
+#table-container table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#table-container table, th, td {
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+#table-container th {
+    background-color: var(--navbar-primary-color);
+    color: var(--font-color-light);
+}
+
+#table-container th, td {
+    padding: 10px;
+    text-align: center;
+}   
+
+#table-container .btn-action {
+    background-color: #11AFDE;
+    padding: 7px 15px;
+    color: var(--font-color-light);
+    border-radius: 3px;
+    font-size: .8em;
+}
+
+#table-container .btn-action:hover {
+    background-color: rgb(27, 141, 175);
 }
