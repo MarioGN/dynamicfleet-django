@@ -40,7 +40,7 @@ class RegisterVehiclePostValid(TestCase):
         data = dict(model='Gol', 
                     license_plate='XYZ2284', 
                     year=2018, 
-                    state='SP')
+                    state='disponivel')
         self.response = self.client.post(r('veiculos:register_vehicle'), data)
 
     def test_post(self):

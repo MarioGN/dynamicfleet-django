@@ -58,7 +58,7 @@ class VehiclesListeGetHasItems(TestCase):
             'Gol',
             'XYZ2284',
             '2018',
-            'SP',
+            'disponivel',
         ]
 
         for expected in contents:

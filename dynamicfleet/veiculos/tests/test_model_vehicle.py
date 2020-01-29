@@ -26,10 +26,9 @@ class VehicleModelTest(TestCase):
         self.assertEqual(2018, self.obj.year)
     
     def test_default_state(self):
-        self.assertEqual('SP', self.obj.state)
+        self.assertEqual('disponivel', self.obj.state)
 
     def test_update_state(self):
-        self.obj.state = 'PR'
+        self.obj.state = 'manutencao'
         self.obj.save()
-        self.assertEqual('PR', self.obj.state)
-
+        self.assertEqual('manutencao', self.obj.state)
