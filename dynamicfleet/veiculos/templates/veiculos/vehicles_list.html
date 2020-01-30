@@ -26,7 +26,7 @@
                                 <td>{{ vehicle.license_plate }}</td>
                                 <td>{{ vehicle.year }}</td>
                                 <td>{{ vehicle.state }}</td>
-                                <td><a href="#" class="btn-action">Reservar</a></td>
+                                <td><a href="{% url 'reservas:reserve_vehicle' pk=vehicle.pk %}" class="btn-action">Reservar</a></td>
                             </tr>
                         {% endfor %}
                     </tbody>
