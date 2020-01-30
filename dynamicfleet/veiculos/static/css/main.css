@@ -251,6 +251,49 @@ a {
     color: var(--font-color-light);
 }
 
+#filter-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid #ddd;
+    margin: 20px 0;
+    border-top: none;
+}
+
+#filter-form .form-group input {
+    padding: 8px;
+    border: 1px #ddd solid;
+}
+
+#filter-form .form-group input:focus {
+    outline: none;
+    border-color: var(--navbar-primary-color);
+}
+
+#filter-form label, 
+#filter-form input, 
+#filter-form select {
+    margin: 20px 10px;
+}
+
+#filter-reserva label {
+    margin-right: 0;
+}
+
+#filter-form .form-group button {
+    padding: 9px 20px;
+    width: 130px;
+    border: none;
+    color: var(--font-color-light);
+    font-weight: bold;
+    border-radius: 3px;
+    background: var(--btn-confirm-background);
+}
+
+#filter-form .form-group button:hover {
+    background: var(--btn-confirm-background-hover);
+}
+
 #table-container table {
     border-collapse: collapse;
     width: 100%;

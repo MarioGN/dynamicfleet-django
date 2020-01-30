@@ -7,6 +7,22 @@
             <h3>Veículos Disponiveis</h3>
         </div>
 
+        <div>
+            <form id="filter-form" action="" method="GET">
+                <div class="form-group">
+                    <label for="start">Inicio:</label>
+                    <input type="text" name="start" required id="start">
+                </div>
+                <div class="form-group">
+                    <label for="end">Fim:</label>
+                    <input type="text" name="end" required id="end">
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn-filtrar">Filtrar</button>
+                </div>
+            </form>
+        </div>
+
         {% if vehicles %}
             <div id="table-container">
                 <table>
