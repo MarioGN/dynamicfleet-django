@@ -3,6 +3,7 @@ from django.db import models
 from django.core.exceptions import ValidationError
 from dynamicfleet.reservas.validators import validate_start_date
 
+
 class Reserve(models.Model):
     STATES_CHOICES = [
         ('provisoria', 'Provisória'),
@@ -34,3 +35,10 @@ class Reserve(models.Model):
     class Meta:
         verbose_name = 'reserva'
         verbose_name_plural = 'reservas'
+
+    def __str__(self):
+        return '[ veiculo: {}, start: {}, end: {}, state: {}]'.format(
+            self.vehicle.model,
+            self.start,
+            self.end,
+            self.state)

@@ -1,3 +1,4 @@
 from django.contrib import admin
+from dynamicfleet.reservas.models import Reserve
 
-# Register your models here.
+admin.site.register(Reserve)

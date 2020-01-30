@@ -1,6 +1,8 @@
+from datetime import datetime, timedelta
 from django.test import TestCase
 from django.shortcuts import reverse, resolve_url as r
 from dynamicfleet.reservas.forms import ReserveForm
+from dynamicfleet.reservas.models import Reserve
 from dynamicfleet.veiculos.models import Vehicle
 
 

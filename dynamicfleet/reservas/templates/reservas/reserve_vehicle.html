@@ -30,6 +30,12 @@
                 {% csrf_token %}
                 {{ form.non_field_errors }}
 
+                <ul>
+                    <li>{{form.start.errors}}</li>
+                    <li>{{form.end.errors}}</li>
+                    <li>{{form.state.errors}}</li>
+                </ul>
+
                 
                 <div class="form-group">
                     <label for="{{ form.start.id_for_label }}">{{ form.start.label }}:</label>
