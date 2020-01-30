@@ -21,7 +21,8 @@
             <div class="container">
                 <h1 class="logo"><span>Dynamic</span>Fleet</h1>
                 <ul>
-                    <li><a href="">Registrar Veículo</a></li>
+                    <li><a href="{% url 'veiculos:vehicles_list' %}">Veículo Disponíveis</a></li>
+                    <li><a href="{% url 'veiculos:register_vehicle' %}">Registrar Veículo</a></li>
                 </ul>
             </div>
         </nav>

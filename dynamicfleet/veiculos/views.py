@@ -20,6 +20,6 @@ def register_vehicle(request):
 
 
 def vehicles_list(request):
-    vehicles = Vehicle.objects.all()
+    vehicles = Vehicle.objects.filter(state='disponivel')
     return render(request, 'veiculos/vehicles_list.html', { 'vehicles' : vehicles})
     
