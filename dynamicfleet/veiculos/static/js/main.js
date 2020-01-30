@@ -1,6 +1,6 @@
-jQuery.datetimepicker.setLocale('pt-BR');
+$(document).ready(function() {
+  jQuery.datetimepicker.setLocale('pt-BR');
 
-$(function () {
   $("#id_start").datetimepicker({
     format: 'd/m/Y H:i',
     onShow:function(ct){

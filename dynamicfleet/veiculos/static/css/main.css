@@ -329,6 +329,10 @@ a {
     border-top: 1px solid #ddd;
 }
 
+#form-reserva .form-group, .btn-group {
+    height: 150px;
+}
+
 #form-reserva .form-group input {
     padding: 8px;
     border: 1px #ddd solid;
@@ -350,6 +354,18 @@ a {
 
 #form-reserva label {
     margin-right: 0;
+}
+
+#form-reserva .invalid input {
+    border: 1px solid var(--btn-cancel-background);
+}
+
+#form-reserva .invalid > span li {
+    list-style: none;
+    text-align: center;
+    color: var(--btn-cancel-background);
+    margin-bottom: 20px;
+    font-size: .9em;
 }
 
 .btn-reserva {

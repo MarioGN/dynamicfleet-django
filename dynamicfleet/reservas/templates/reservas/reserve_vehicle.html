@@ -29,29 +29,33 @@
             <form id="form-reserva" action="" action="." novalidate method="POST">
                 {% csrf_token %}
                 {{ form.non_field_errors }}
-
-                <ul>
-                    <li>{{form.start.errors}}</li>
-                    <li>{{form.end.errors}}</li>
-                    <li>{{form.state.errors}}</li>
-                </ul>
-
                 
-                <div class="form-group">
+                <div class="form-group {% if form.start.errors %} invalid {% endif %}">
                     <label for="{{ form.start.id_for_label }}">{{ form.start.label }}:</label>
                     {{ form.start }}
+                    <span>
+                        {{form.start.errors}}
+                    </span>
                 </div>
-                <div class="form-group">
+                <div class="form-group {% if form.end.errors %} invalid {% endif %}">
                     <label for="{{ form.end.id_for_label }}">{{ form.end.label }}:</label>
                     {{ form.end }}
+                    <span>
+                        {{form.end.errors}}
+                    </span>
                 </div>
                 
-                <div class="form-group">
+                <div class="form-group {% if form.start.errors %} state {% endif %}">
                     <label for="{{ form.state.id_for_label }}">{{ form.state.label }}:</label>
                     {{ form.state }}
+                    <span>
+                        {{form.state.errors}}
+                    </span>
                 </div>
 
-                <button type="submit" class="btn-reserva">Confirmar</button>
+                <div class="form-group">
+                    <button type="submit" class="btn-reserva">Confirmar</button>
+                </div>
             </form>
         </div>
        
