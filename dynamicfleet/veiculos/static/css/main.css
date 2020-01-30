@@ -256,7 +256,9 @@ a {
     width: 100%;
 }
 
-#table-container table, th, td {
+#table-container table, 
+#table-container  th, 
+#table-container  td {
     border: 1px solid #ddd;
     text-align: left;
 }
@@ -266,7 +268,8 @@ a {
     color: var(--font-color-light);
 }
 
-#table-container th, td {
+#table-container th, 
+#table-container td {
     padding: 10px;
     text-align: center;
 }   
@@ -403,7 +406,12 @@ a {
     color: var(--font-color-light);
 }
 
-#reserva-container th, td {
+#tabela-veiculo {
+    margin-top: 20px;
+}
+
+#tabela-veiculo th, 
+#tabela-veiculo td {
     padding: 4px;
     text-align: center;
 } 
