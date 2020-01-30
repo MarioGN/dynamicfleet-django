@@ -30,7 +30,7 @@ class ReserveVehicleGet(TestCase):
 
     def test_html(self):
         tags = (('<form', 1),
-                ('<input', 5),
+                ('<input', 3),
                 ('<select', 1),
                 ('type="text"', 2),
                 ('type="submit"', 1))
