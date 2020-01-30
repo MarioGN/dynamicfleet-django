@@ -1,5 +1,5 @@
 from django.test import TestCase
-from django.shortcuts import resolve_url as r
+from django.shortcuts import reverse, resolve_url as r
 from dynamicfleet.reservas.forms import ReserveForm
 from dynamicfleet.veiculos.models import Vehicle
 
@@ -13,7 +13,7 @@ class ReserveVehicleGet(TestCase):
         )
         self.obj.save()
         
-        self.response = self.client.get(r('reservas:reserve_vehicle'))
+        self.response = self.client.get(reverse('reservas:reserve_vehicle', kwargs={'pk': self.obj.pk}))
     
     def test_get(self):
         self.assertEqual(200, self.response.status_code)
@@ -50,3 +50,10 @@ class ReserveVehicleGet(TestCase):
         for text, count in tags:
             with self.subTest():
                 self.assertContains(self.response, text, count)
+
+
+class ReserveVehicleDoesNotExistGet(TestCase):
+    def test_get(self):
+        self.response = self.client.get(reverse('reservas:reserve_vehicle', kwargs={'pk': 99}))
+        self.assertEqual(404, self.response.status_code)
+    
