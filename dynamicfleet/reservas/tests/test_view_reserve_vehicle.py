@@ -1,10 +1,18 @@
 from django.test import TestCase
 from django.shortcuts import resolve_url as r
 from dynamicfleet.reservas.forms import ReserveForm
+from dynamicfleet.veiculos.models import Vehicle
 
 
 class ReserveVehicleGet(TestCase):
     def setUp(self):
+        self.obj = Vehicle(
+            model='Gol',
+            license_plate='XYZ2284',
+            year=2018,
+        )
+        self.obj.save()
+        
         self.response = self.client.get(r('reservas:reserve_vehicle'))
     
     def test_get(self):
@@ -22,10 +30,22 @@ class ReserveVehicleGet(TestCase):
 
     def test_html(self):
         tags = (('<form', 1),
-                ('<input', 3),
+                ('<input', 5),
                 ('<select', 1),
                 ('type="text"', 2),
                 ('type="submit"', 1))
+
+        for text, count in tags:
+            with self.subTest():
+                self.assertContains(self.response, text, count)
+
+    def test_has_vehicle_object(self):
+        form = self.response.context['vehicle']
+        self.assertIsInstance(form, Vehicle)
+
+    def test_html_vehicle(self):
+        tags = (('<td>{}</td>'.format(self.obj.model), 1),
+                ('<td>{}</td>'.format(self.obj.license_plate), 1))
 
         for text, count in tags:
             with self.subTest():
