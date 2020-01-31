@@ -45,7 +45,7 @@
                                 <td>{{ reserve.start }}</td>
                                 <td>{{ reserve.end }}</td>
                                 <td>{{ reserve.get_state_display }}</td>
-                                <td><a href="#" class="btn-action">Alterar</a></td>
+                                <td><a href="{% url 'reservas:edit_reserve' pk=reserve.pk %}" class="btn-action">Alterar</a></td>
                             </tr>
                         {% endfor %}
                     </tbody>

@@ -34,11 +34,15 @@ def vehicles_list(request):
             start = form.cleaned_data.get('start')
             end = form.cleaned_data.get('end')
 
-            vehicles = Vehicle.objects.filter(
-                            Q(state='disponivel', reserves__isnull=True) | 
+            vehicles = Vehicle.objects.filter(state='disponivel')
+            vehicles = vehicles.filter(
+                            Q(reserves__isnull=True) | 
                             ~Q(
-                                Q(reserves__start__range=(start, end)) |
-                                Q(reserves__end__range=(start, end)))
+                                Q(
+                                    Q(reserves__start__range=(start, end)) |
+                                    Q(reserves__end__range=(start, end))
+                                ) | ~Q(reserves__state='cancelada')
+                            )
                         ).distinct()
 
     return render(request, 
