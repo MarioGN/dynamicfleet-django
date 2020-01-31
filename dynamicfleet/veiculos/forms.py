@@ -15,3 +15,8 @@ class VehicleForm(forms.ModelForm):
     class Meta:
         model = Vehicle
         fields = ['model', 'license_plate', 'year', 'state']
+
+
+class FilterVehicleForm(forms.Form):
+    start = forms.DateTimeField(label="Inicio", input_formats=['%d/%m/%Y %H:%M'])
+    end = forms.DateTimeField(label="Fim", input_formats=['%d/%m/%Y %H:%M'])

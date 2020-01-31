@@ -1,7 +1,8 @@
 from django.shortcuts import render, HttpResponse
 from django.contrib import messages
-from dynamicfleet.veiculos.forms import VehicleForm
+from dynamicfleet.veiculos.forms import VehicleForm, FilterVehicleForm
 from dynamicfleet.veiculos.models import Vehicle
+from django.db.models import Q
 
 
 def register_vehicle(request):
@@ -20,6 +21,27 @@ def register_vehicle(request):
 
 
 def vehicles_list(request):
-    vehicles = Vehicle.objects.filter(state='disponivel')
-    return render(request, 'veiculos/vehicles_list.html', { 'vehicles' : vehicles})
+    vehicles = Vehicle.objects.filter(state='disponivel', reserves__isnull=True).distinct() 
+
+    if request.method == 'GET':
+        start = request.GET.get('start')
+        end = request.GET.get('end')
+
+        if start and end:
+            form = FilterVehicleForm(request.GET)
+            form.full_clean()
+            
+            start = form.cleaned_data.get('start')
+            end = form.cleaned_data.get('end')
+
+            vehicles = Vehicle.objects.filter(
+                            Q(state='disponivel', reserves__isnull=True) | 
+                            ~Q(
+                                Q(reserves__start__range=(start, end)) |
+                                Q(reserves__end__range=(start, end)))
+                        ).distinct()
+
+    return render(request, 
+                  'veiculos/vehicles_list.html', 
+                  {'vehicles' : vehicles, 'form': FilterVehicleForm()})
     

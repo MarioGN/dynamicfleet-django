@@ -18,4 +18,22 @@ $(document).ready(function() {
       })
     },
   });
+
+  $("#filter-start").datetimepicker({
+    format: 'd/m/Y H:i',
+    onShow:function(ct){
+        this.setOptions({
+          maxDate:jQuery('#filter-end').val()?jQuery('#filter-end').val():false
+        })
+    },
+  });
+
+  $("#filter-end").datetimepicker({      
+    format: 'd/m/Y H:i',
+    onShow:function(ct){
+      this.setOptions({
+        minDate:jQuery('#filter-start').val()?jQuery('#filter-start').val():false
+      })
+    },
+  });
 });
