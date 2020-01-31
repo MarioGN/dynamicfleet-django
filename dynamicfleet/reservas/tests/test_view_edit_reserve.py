@@ -25,4 +25,4 @@ class EditReserveGet(TestCase):
         self.assertEqual(200, self.response.status_code)
 
     def test_template(self):
-        self.assertTemplateUsed(self.response, 'reservas/reserve_vehicle.html')
+        self.assertTemplateUsed(self.response, 'reservas/edit_reserve.html')

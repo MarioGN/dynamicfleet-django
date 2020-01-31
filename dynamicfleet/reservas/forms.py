@@ -11,6 +11,20 @@ class ReserveForm(forms.ModelForm):
         model = Reserve
         fields = ['start', 'end', 'state']
 
+class EditReserveForm(forms.ModelForm):
+    start = forms.DateTimeField(label="Inicio", 
+                                input_formats=['%d/%m/%Y %H:%M'],
+                                required=False,
+                                widget=forms.TextInput(attrs={'disabled': 'disabled'}))
+    end = forms.DateTimeField(label="Fim", 
+                                input_formats=['%d/%m/%Y %H:%M'],
+                                required=False,
+                                widget=forms.TextInput(attrs={'disabled': 'disabled'}))
+
+    class Meta:
+        model = Reserve
+        fields = ['start', 'end', 'state']
+
 
 class FilterReserveForm(forms.Form):
     start = forms.DateTimeField(label="Inicio", input_formats=['%d/%m/%Y %H:%M'])

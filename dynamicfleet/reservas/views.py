@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, HttpResponse
-from dynamicfleet.reservas.forms import ReserveForm, FilterReserveForm
+from dynamicfleet.reservas.forms import ReserveForm, FilterReserveForm, EditReserveForm
 from dynamicfleet.reservas.models import Reserve
 from dynamicfleet.veiculos.models import Vehicle
 from django.db.models import Q
@@ -54,5 +54,15 @@ def reserves_list(request):
 
 
 def edit_reserve(request, pk=None):
+    reserve = get_object_or_404(Reserve, pk=pk)
+    form = EditReserveForm(request.POST or None, instance=reserve)
+
+    if form.is_valid():
+        reserve = form.save(commit=False)
+        reserve.save()
+        form = EditReserveForm(instance=reserve)
+
+
     return render(request, 
-                  'reservas/reserve_vehicle.html')
+                  'reservas/edit_reserve.html',
+                  {'reserve': reserve, 'form': form})
