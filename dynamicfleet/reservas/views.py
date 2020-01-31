@@ -28,4 +28,8 @@ def reserve_vehicle(request, pk=None):
                   {'form': ReserveForm(), 'vehicle': vehicle })
 
 def reserves_list(request):
-    return render(request, 'reservas/reserves_list.html')
+    reserves = Reserve.objects.all()
+    
+    return render(request, 
+                  'reservas/reserves_list.html', 
+                  {'reserves': reserves})

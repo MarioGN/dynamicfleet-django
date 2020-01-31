@@ -16,6 +16,7 @@
                             <th>Placa</th>
                             <th>Inicio</th>
                             <th>Fim</th>
+                            <th>Status</th>
                             <th>Ações</th>
                         </tr>
                     </thead>
@@ -26,6 +27,7 @@
                                 <td>{{ reserve.vehicle.license_plate }}</td>
                                 <td>{{ reserve.start }}</td>
                                 <td>{{ reserve.end }}</td>
+                                <td>{{ reserve.get_state_display }}</td>
                                 <td><a href="#" class="btn-action">Alterar</a></td>
                             </tr>
                         {% endfor %}

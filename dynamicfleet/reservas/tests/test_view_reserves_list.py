@@ -1,3 +1,4 @@
+from django.db.models import QuerySet
 from django.test import TestCase
 from django.shortcuts import reverse, resolve_url as r
 
@@ -11,3 +12,7 @@ class ReservesListGet(TestCase):
     
     def test_template(self):
         self.assertTemplateUsed(self.response, 'reservas/reserves_list.html')
+
+    def test_reserves_in_context(self):
+        reserves = self.response.context['reserves']
+        self.assertIsInstance(reserves, QuerySet)
