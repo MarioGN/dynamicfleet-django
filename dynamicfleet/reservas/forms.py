@@ -10,3 +10,8 @@ class ReserveForm(forms.ModelForm):
     class Meta:
         model = Reserve
         fields = ['start', 'end', 'state']
+
+
+class FilterReserveForm(forms.Form):
+    start = forms.DateTimeField(label="Inicio", input_formats=['%d/%m/%Y %H:%M'])
+    end = forms.DateTimeField(label="Fim", input_formats=['%d/%m/%Y %H:%M'])

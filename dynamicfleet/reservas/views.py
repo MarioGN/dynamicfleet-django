@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, HttpResponse
-from dynamicfleet.reservas.forms import ReserveForm
+from dynamicfleet.reservas.forms import ReserveForm, FilterReserveForm
 from dynamicfleet.reservas.models import Reserve
 from dynamicfleet.veiculos.models import Vehicle
 
@@ -32,4 +32,4 @@ def reserves_list(request):
     
     return render(request, 
                   'reservas/reserves_list.html', 
-                  {'reserves': reserves})
+                  {'reserves': reserves, 'form': FilterReserveForm()})

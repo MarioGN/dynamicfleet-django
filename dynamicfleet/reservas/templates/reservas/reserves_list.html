@@ -7,6 +7,23 @@
             <h3>Reservas Registradas</h3>
         </div>
 
+        <div>
+            <form id="filter-form" action="" method="GET">
+                <div class="form-group">
+                    <label for="{{ form.start.id_for_label }}">{{ form.start.label }}:</label>
+                    {{ form.start }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.end.id_for_label }}">{{ form.end.label }}:</label>
+                    {{ form.end }}
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn-filtrar">Filtrar</button>
+                </div>
+            </form>
+        </div>
+
+
         {% if reserves %}
             <div id="table-container">
                 <table>
