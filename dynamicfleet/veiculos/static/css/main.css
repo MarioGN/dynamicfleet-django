@@ -2,459 +2,200 @@
 
 :root {
     --background-color: #e5e6f0;
-
     --font-color-light: #fff;
-
+    --navbar-dark-primary: #333;
+    --navbar-dark-primary-hover: #444;
     --navbar-primary-color: #f7c08a;
     --navbar-primary-color-hover: #f59f48d8;
-    --navbar-secondary-color: #333;
-    --navbar-secondary-color-hover: #444;
-
-    --btn-confirm-background: #8BC34A;
-    --btn-confirm-background-hover: #689F38;
-    --btn-cancel-background: #E75B65;
-    --btn-cancel-background-hover:  #d8545d;
+    --required-input-color: #E75B65;
 }
-
+ 
 * {
-    margin: 0;
-    padding: 0;
-    outline: 0;
-    box-sizing: border-box;
-    transition: all .7s ease;
-}
-
-html, body, #root {
-    height: 100%;
-}
-  
-body {
-    background: var(--background-color);
-    -webkit-font-smoothing: antiliased;
+    transition: all .6s ease;
 }
 
 body, input, button {
     font-family: Roboto, sans-serif;
 }
 
-a {
-    color: #333;
-    text-decoration: none;
-}
-
-.container {
-    margin: auto;
-    max-width: 1100px;
-    overflow: auto;
-    padding-top: 0 20px;
+body {
+    background: var(--background-color);
+    -webkit-font-smoothing: antiliased;
 }
 
 /* Navbar */
 #navbar {
-    background: var(--navbar-secondary-color);
-    color: var(--font-color-light);
-    overflow: auto;
+    background: var(--navbar-dark-primary) !important;
     border-bottom: 3px solid var(--navbar-primary-color);
-
     -webkit-box-shadow: 0px 4px 7px 0px rgba(0,0,0,0.3);
     -moz-box-shadow: 0px 4px 7px 0px rgba(0,0,0,0.3);
     box-shadow: 0px 4px 7px 0px rgba(0,0,0,0.3);
 }
-  
-#navbar a {
-    color: var(--font-color-light);
-}
-  
-#navbar h1 {
-    float: left;
-    padding: 15px 0;
-}
 
-#navbar h1 span {
-    color: var(--navbar-primary-color);
-}
-  
-#navbar ul {
-    list-style: none;
-    float: right;
-}
-  
-#navbar ul li {
-    float: left;
-}
-  
-#navbar ul li a {
-    display: block;
-    padding: 20px;
-    text-align: center;
-}
-  
-#navbar ul li a:hover,
-#navbar ul li a.current {
-    background: var(--navbar-secondary-color-hover);
-    color: var(--navbar-primary-color);
-}
-
-
-/* Create Vehicle Form */
-#form-container {
-    width: 600px;
-    margin: 20px auto;
-    background: var(--font-color-light);
-    box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.02);
-    border-radius: 2px;
-}
-
-#form-container .form-header {
-    background-color: var(--navbar-primary-color);
-    padding: 20px;
-    padding-bottom: 30px;
-    text-align: center;
-}
-
-#form-container h3 {
+.navbar-brand  {
     font-size: 1.4em;
+}
+
+.navbar-brand span {
+    color: var(--navbar-primary-color);
+}
+
+.navbar-brand span i {
+    font-size: 1.2em;
+}
+
+.nav-link:hover {
+    color: var(--navbar-primary-color) !important;
+    background:  var(--navbar-dark-primary-hover);
+}
+/* -------------------------------------------------------- */
+/* Listagem */
+.list-container {
+    margin-top: 80px;
+}
+
+.list-container .card {
+    min-height: 90vh;
+    margin-bottom: 30px;
+}
+
+.list-container .card .card-header {
+    background: var(--navbar-primary-color-hover);
+
+}
+
+.list-container .card .card-header h3 {
+    font-size: 1.3em;
     color: var(--font-color-light);
-}
-
-#vehicle-form {
-    padding: 20px;
-}
-
-#vehicle-form .form-group {
-    margin-bottom: 20px;
-}
-
-#vehicle-form label {
-    display: block;
-    margin-bottom: 5px;
     font-weight: bold;
-}   
-
-#vehicle-form input {
-    width: 100%;
-    padding: 8px;
-    border: 1px #ddd solid;
+    text-align: center;
 }
 
-#vehicle-form input:focus {
-    outline: none;
-    border-color: var(--navbar-primary-color);
+/* Filter Form */
+#veiculos-filter-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0 30px 0;
 }
 
-#vehicle-form select {
-    max-width: 250px;
-    width: 100%;
-    padding: 8px;
-}
-
-#vehicle-form .input-group {
+#veiculos-filter-form div {
     display: flex;
 }
 
-#vehicle-form .input-group div {
-    width: 100%;
+#veiculos-filter-form div label {
+    width: 80px;
+    margin-right: 10px;
 }
 
-#vehicle-form .input-group div input {
-    width: 90%;
+#veiculos-filter-form div input {
+    border-radius: 0;
 }
 
-#vehicle-form .invalid input,
-#vehicle-form .invalid select {
-    outline: none;
-    border-color: #E75B65;
+#veiculos-filter-form div input:focus {
+    box-shadow: none;
+    outline: 0 none;
+    border: 1px solid var(--navbar-primary-color);
 }
 
-#vehicle-form .invalid span {
-    margin: 5px;
+#veiculos-filter-form button {
+    margin: 0 20px;
+    width: 120px;
+}
+
+/* List Table */
+#list-table {
+    margin: 20px 0;
+}
+
+#list-table th {
+    background: var(--navbar-primary-color-hover);
+    color: var(--font-color-light);
+    text-align: center;
+    padding: 8px;
+}
+
+#list-table td {
+    padding: 4px;
+    text-align: center;
+}
+
+/* -------------------------------------------------------- */
+/* Forms */
+#register-form {
+    width: 800px;
+}
+
+.form-container {
+    margin-top: 80px;
+}
+
+.form-container .card {
+    margin-bottom: 30px;
+}
+
+.form-container .card .card-header {
+    background: var(--navbar-primary-color-hover);
+
+}
+
+.form-container .card .card-header h3 {
+    font-size: 1.3em;
+    color: var(--font-color-light);
     font-weight: bold;
-    color: #E75B65;
-    font-size: .9em;
-    display: block;
+    text-align: center;
 }
 
-#ano-container label,
-#ano-container input {
-    margin-left: 27px;
+.form-container div input,
+.form-container div select {
+    border-radius: 0;
 }
 
-#ano-container > span {
-    display: block;
-    margin-left: 32px !important;
+.form-container div input:focus,
+.form-container div select:focus  {
+    box-shadow: none;
+    outline: 0 none;
+    border: 1px solid var(--navbar-primary-color);
 }
 
+.form-container div small {
+    color: var(--required-input-color);
+}
 
-.btn-group-register {
+.form-container div button {
+    padding: 5px 30px;
+}
+
+.form-container table th {
+    background: var(--navbar-primary-color-hover);
+    color: var(--font-color-light);
+    text-align: center;
+}
+
+.form-container table td {
+    padding: 4px;
+    text-align: center;
+}
+
+.reserva-form-container  .card {
+    min-height: 80vh;
+}
+
+#reserva-form {
     margin-top: 40px;
-    display: flex;
-    justify-content: space-between;
+    border: 1px solid #ddd;
+    border-radius: 2px;
 }
 
-.btn {
-    display: inline-block;
-    color: #fff;
-    font-size: 18px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 2px;
-    cursor: pointer;
+#reserva-form h4 {
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 40px;
+    padding: 8px 0;
+    font-weight: bold;
+    font-size: 1.3em;
 }
 
 .btn-cancelar {
-    background: var(--btn-cancel-background);
-}
-
-.btn-cancelar:hover {
-    background: var(--btn-cancel-background-hover);
-}
-
-.btn-confirmar {
-    background: var(--btn-confirm-background);
-}
-
-.btn-confirmar:hover {
-    background: var(--btn-confirm-background-hover);
-}
-
-.info-text {
-    display: none;
-    font-size: 1.1em;
-    background-color: #187FF5;
-    width: 600px;
-    margin: 0 auto;
-    margin-top: 10px;
-    color: var(--font-color-light);
-    padding: 10px;
-    border-radius: 5px;
-}
-
-/* Lista de Veículos */
-#list-container {
-    width: 100%;
-    margin: 20px auto;
-    background: var(--font-color-light);
-    box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.02);
-    border-radius: 2px;
-    min-height: 80vh;
-    padding: 20px 10px;
-}
-
-#list-container .list-header {
-    background-color: var(--navbar-primary-color);
-    padding: 5px;
-    text-align: center;
-}
-
-#list-container h3 {
-    font-size: 1.4em;
-    color: var(--font-color-light);
-}
-
-#filter-form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-top: 1px solid #ddd;
-    margin: 20px 0;
-    border-top: none;
-}
-
-#filter-form .form-group input {
-    padding: 8px;
-    border: 1px #ddd solid;
-}
-
-#filter-form .form-group input:focus {
-    outline: none;
-    border-color: var(--navbar-primary-color);
-}
-
-#filter-form label, 
-#filter-form input, 
-#filter-form select {
-    margin: 20px 10px;
-}
-
-#filter-reserva label {
-    margin-right: 0;
-}
-
-#filter-form .form-group button {
-    padding: 9px 20px;
-    width: 130px;
-    border: none;
-    color: var(--font-color-light);
-    font-weight: bold;
-    border-radius: 3px;
-    background: var(--btn-confirm-background);
-}
-
-#filter-form .form-group button:hover {
-    background: var(--btn-confirm-background-hover);
-}
-
-#table-container table {
-    border-collapse: collapse;
-    width: 100%;
-}
-
-#table-container table, 
-#table-container  th, 
-#table-container  td {
-    border: 1px solid #ddd;
-    text-align: left;
-}
-
-#table-container th {
-    background-color: var(--navbar-primary-color);
-    color: var(--font-color-light);
-}
-
-#table-container th, 
-#table-container td {
-    padding: 10px;
-    text-align: center;
-}   
-
-#table-container .btn-action {
-    background-color: #11AFDE;
-    padding: 7px 15px;
-    color: var(--font-color-light);
-    border-radius: 3px;
-    font-size: .8em;
-}
-
-#table-container .btn-action:hover {
-    background-color: rgb(27, 141, 175);
-}
-
-#alert-empty-list {
-    color: var(--navbar-secondary-color); 
-    margin: 30px 20px; 
-    text-align: center;
-    font-size: 1.6em;
-}
-
-/* Reservas */
-#reserva-container {
-    width: 100%;
-    margin: 20px auto;
-    background: var(--font-color-light);
-    box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.02);
-    border-radius: 2px;
-    min-height: 80vh;
-    padding: 20px 10px;
-}
-
-#reserva-container .list-header  {
-    background-color: var(--navbar-primary-color);
-    padding: 5px;
-    text-align: center;
-    color: var(--font-color-light);
-}
-
-#form-reserva-container {
-    border: 1px solid #ddd;
-    border-radius: 2px;
-    margin: 20px 0;
-    padding: 10px;
-    padding-top: 0;
-}
-
-#form-reserva-container h3 {
-    text-align: center;
-    font-size: 1.4em;
-    margin: 5px 0;
-}
-
-#form-reserva {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-top: 1px solid #ddd;
-}
-
-#form-reserva .form-group, .btn-group {
-    height: 150px;
-}
-
-#form-reserva .form-group input {
-    padding: 8px;
-    border: 1px #ddd solid;
-}
-
-#form-reserva .form-group input:focus {
-    outline: none;
-    border-color: var(--navbar-primary-color);
-}
-
-#form-reserva .form-group select {
-    max-width: 250px;
-    padding: 8px;
-}
-
-#form-reserva label, input, select, button {
-    margin: 20px 10px;
-}
-
-#form-reserva label {
-    margin-right: 0;
-}
-
-#form-reserva .invalid input {
-    border: 1px solid var(--btn-cancel-background);
-}
-
-#form-reserva .invalid > span li {
-    list-style: none;
-    text-align: center;
-    color: var(--btn-cancel-background);
-    margin-bottom: 20px;
-    font-size: .9em;
-}
-
-.btn-reserva {
-    display: inline-block;
-    color: #fff;
-    font-size: 1.1em;
-    padding: 8px 20px;
-    border: none;
-    border-radius: 2px;
-    cursor: pointer;
-    background-color: var(--btn-confirm-background);
-}
-
-.btn-reserva:hover { 
-    background-color: var(--btn-confirm-background-hover);
-}
-
-#table-veiculo-container {
-    margin: 20px 0;
-    border: 1px solid var(--navbar-secondary-color);
-}
-
-#reserva-container table {
-    border-collapse: collapse;
-    width: 100%;
-}
-
-#reserva-container table, th, td {
-    border: 1px solid #ddd;
-    text-align: left;
-}
-
-#reserva-container th {
-    background-color: var(--navbar-primary-color);
-    color: var(--font-color-light);
-}
-
-#tabela-veiculo {
     margin-top: 20px;
 }
-
-#tabela-veiculo th, 
-#tabela-veiculo td {
-    padding: 4px;
-    text-align: center;
-} 
