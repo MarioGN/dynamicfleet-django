@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, HttpResponse
 from dynamicfleet.reservas.forms import ReserveForm
 from dynamicfleet.reservas.models import Reserve
 from dynamicfleet.veiculos.models import Vehicle
@@ -26,3 +26,6 @@ def reserve_vehicle(request, pk=None):
     return render(request, 
                   'reservas/reserve_vehicle.html', 
                   {'form': ReserveForm(), 'vehicle': vehicle })
+
+def reserves_list(request):
+    return render(request, 'reservas/reserves_list.html')

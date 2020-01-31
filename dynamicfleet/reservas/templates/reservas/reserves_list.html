@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div id="list-container">
+        <div class="list-header">
+            <h3>Reservas Registradas</h3>
+        </div>
+
+        {% if reserves %}
+            <div id="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Veículo</th>
+                            <th>Placa</th>
+                            <th>Inicio</th>
+                            <th>Fim</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for reserve in reserves %}
+                            <tr>
+                                <td>{{ reserve.vehicle.model }}</td>
+                                <td>{{ reserve.vehicle.license_plate }}</td>
+                                <td>{{ reserve.start }}</td>
+                                <td>{{ reserve.end }}</td>
+                                <td><a href="#" class="btn-action">Alterar</a></td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% else %}
+            <p id="alert-empty-list">Ainda não existem reservas registrados no sistema!</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock content %}
