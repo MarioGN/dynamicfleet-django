@@ -51,3 +51,8 @@ def reserves_list(request):
     return render(request, 
                   'reservas/reserves_list.html', 
                   {'reserves': reserves, 'form': FilterReserveForm()})
+
+
+def edit_reserve(request, pk=None):
+    return render(request, 
+                  'reservas/reserve_vehicle.html')
